@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+
+    <package name="basicstruts2" extends="struts-default">
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+		
+        <action name="empinfoAction" 
+         class="com.janbask.action.Employee"
+         method="execute">
+         <result name="input">/actionvalidation.jsp</result>
+         <result name="success">/employeesuccess.jsp</result>
+      </action>
+      <action name="empinfoActionXml" 
+         class="com.janbask.action.EmployeeXml"
+         method="execute">
+         <result name="input">/xmlvalidation.jsp</result>
+         <result name="success">/employeesuccess.jsp</result>
+      </action>
+      <action name="empinfoAnnotation" 
+         class="com.janbask.action.EmployeeAnnotation"
+         method="execute">
+         <result name="input">/annotationvalidation.jsp</result>
+         <result name="success">/employeesuccess.jsp</result>
+      </action>
+    </package>
+</struts>
